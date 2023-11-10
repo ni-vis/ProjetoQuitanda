@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quitanda do Zé - Página no Facebook</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #4267B2;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 36px;
+        }
+        .header .facebook-icon {
+            font-size: 24px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .post {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .post h3 {
+            font-size: 24px;
+        }
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-description {
+            flex: 1;
+            margin-left: 20px;
+        }
+        .follow-button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.facebook.com/sua_pagina_do_facebook" target="_blank" class="facebook-icon">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <h1>Quitanda do Zé</h1>
+    </div>
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img src="perfil.jpeg" alt="Foto de Perfil">
+            </div>
+            <div class="profile-description">
+                <h2>Quitanda do Zé</h2>
+                <p>Bem-vindo à nossa página no Facebook! Aqui você encontrará as melhores frutas frescas e produtos da região. Curta nossa página para receber atualizações sobre ofertas especiais e novos produtos.</p>
+                <button class="btn btn-primary follow-button">Seguir</button>
+            </div>
+        </div>
+        <div class="post">
+            <h3>Novas Frutas Frescas Chegaram!</h3>
+            <p>Na Quitanda do Zé, sempre buscamos fornecer as frutas mais frescas da região. Venha hoje e confira nossa seleção de frutas recém-chegadas, direto do produtor!</p>
+            <img src="frutas.avif" alt="Frutas Frescas">
+            <p>Publicado em 7 de novembro de 2023</p>
+        </div>
+        <div class="post">
+            <h3>Promoção Especial da Semana</h3>
+            <p>Esta semana, temos uma promoção especial em maçãs. Compre 3 kg de maçãs e leve 1 kg de uvas de graça! Aproveite essa oferta incrível.</p>
+            <img src="maça.jpg" alt="Maçãs">
+            <p>Publicado em 5 de novembro de 2023</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
