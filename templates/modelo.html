@@ -45,12 +45,18 @@
             </ul>
 
                         
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-3 mb-2" type="search" placeholder="O que deseja? " aria-label="Search">
-                          </form>
+            <form class="d-flex mb-1" role="search" action='/busca' method='post'>
+                <input name='buscar' class="form-control me-3" type="search" placeholder="O que deseja? " aria-label="Search">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-search fs-7 fw-bold text-white m-1"></i>Buscar</button>
+                    </span>
+            </form>
+            
+
+
                     
-                          <!-- para adicionar icone precisei tirar o bottom do form -->
-                          <button class="btn btn-danger mb-2" type="submit"><i class="bi bi-search m-1"></i>Buscar</button>
+
             
                       </div>
                     </div>
@@ -80,8 +86,8 @@
                     <div class="col-md-4">
                         <h3>Links Úteis</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#" class='text-decoration-none text-dark'>Página Inicial</a></li>
-                            <li><a href="#" class='text-decoration-none text-dark'>Sobre Nós</a></li>
+                            <li><a href="http://127.0.0.1:5000/" class='text-decoration-none text-dark'>Página Inicial</a></li>
+                            <li><a href="sobre.html" class='text-decoration-none text-dark'>Sobre Nós</a></li>
                             <li><a href="/adm" class='text-decoration-none text-dark'>Administrador</a></li>
                             <li><a href="#" class='text-decoration-none text-dark'>Desenvolvedor</a></li>
                         </ul>
