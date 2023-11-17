@@ -1,0 +1,54 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    color:#283b2d;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.wrapper{
+    min-height: 100%vh;
+    /* vh= medida responsiva; 100% da altura da minha tela */
+}
+h2{
+    display: flex;
+    justify-content: center;
+    flex-direction: center;
+    padding: 3%;
+    text-shadow: 2px 2px 4px #2a522aaa;
+}
+p{
+    display: flex;
+    justify-content: center;
+    flex-direction: center;
+}
+.h22{
+    display: flex;
+    justify-content: center;
+    flex-direction: center;
+    padding: 1%;
+    text-shadow: 2px 2px 4px #2a522aaa;
+}
+.ofertas_txt{
+    /* nao foi colocado:
+    display: flex;
+    justify-content: center;
+    flex-direction: center; 
+    pois ja esta no bootstrap */
+    padding: 1%;
+    text-shadow: 2px 2px 4px #2a522aaa;
+}
+.botoes{
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    flex-direction: center;
+    padding-bottom: 5%;
+}
+footer {
+    margin-top: auto;
+}
+

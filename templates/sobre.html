@@ -1,0 +1,117 @@
+{% extends "modelo.html" %}
+{% block conteudo %}
+
+<h2>Raízes e Crescimento</h2>
+<p class="m-3">A Quitanda do Zé tem suas raízes na simplicidade e no empreendedorismo de José Carlos Pereiras, um homem do interior paulista que decidiu compartilhar os sabores da terra com sua comunidade. </p>
+<p class="m-3">A história da Quitanda do Zé é um exemplo de perseverança e crescimento gradual.</p>
+
+<!-- carrossel inicio -->
+<div id="carrosselFts" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carrosselFts" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carrosselFts" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carrosselFts" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/img/1.jpeg" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>O Começo</h5>
+          <p>Tudo começou quando Zé, como é carinhosamente chamado, saiu pelas ruas com seu carrinho de mão carregado de frutas e verduras frescas. De porta em porta, ele oferecia seus produtos, conquistando a confiança de seus primeiros clientes.
+        </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/2.jpeg" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Uma História de Sucesso</h5>
+          <p>Com o tempo, a demanda por suas mercadorias cresceu, e Zé tomou uma decisão audaciosa. Ele montou uma modesta barraca na feira municipal, onde a Quitanda do Zé logo se tornou uma parada obrigatória para os moradores em busca de alimentos frescos e saborosos. A qualidade dos produtos e o atendimento caloroso fizeram com que a Quitanda do Zé se destacasse. À medida que o tempo passava, Zé e sua equipe mantiveram-se fiéis a seus valores de oferecer produtos de alta qualidade e um atendimento acolhedor. Isso atraiu cada vez mais clientes leais.</p>
+        </div>
+
+      </div>
+      <div class="carousel-item">
+        <img src="../static/img/3.jpeg" class="d-block w-100">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Raízes, Dedicação e Qualidade</h5>
+          <p>A história da Quitanda do Zé é um lembrete de que, com trabalho árduo, amor pelo que se faz e valores sólidos, é possível transformar um carrinho de mão em uma instituição local, proporcionando qualidade de vida e sabor para todos.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carrosselFts" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carrosselFts" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próxima</span>
+    </button>
+  </div>
+<!-- carrossel fim -->
+<!-- carrossel estilo -->
+<style>
+    /* Estilos personalizados para o carrossel e imagens */
+    #carrosselFts {
+        max-width: 50%; /* largura máxima  para o carrossel */
+        margin: 0 auto; /* Centralizar o carrossel na página */
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(46, 78, 46, 0.06) 0px 0px 0px 1px;
+    }
+    #carrosselFts .carousel-inner {
+        max-width: 100%; /*   largura máxima para os itens do carrossel */
+    }
+    #carrosselFts img {
+        max-width: 100%; /*  largura máxima para as imagens */
+        height: auto; /* mantém a proporção da imagem */
+    }
+</style>
+<!-- botoes missoes - inicio -->
+<div class="h22">
+    <h2>Explorando Nossa Missão</h2>
+</div>
+<div class="botoes">
+  <!-- MISSÃO -->
+    <button class="btn btn-success me-3 " type="button" data-bs-toggle="offcanvas" data-bs-target="#missaoOffcanvas" aria-controls="missaoOffcanvas">Missão</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="missaoOffcanvas" aria-labelledby="missaoOffcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title " id="missaoOffcanvasLabel">Alimentos Frescos, Saúde e Comunidade</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>A missão da Quitanda do Zé é simples e clara: fornecer alimentos frescos, saudáveis e saborosos a preços acessíveis. Eles se comprometem a atender as necessidades de seus clientes com produtos de qualidade superior e a criar um ambiente acolhedor que celebre a comunidade local.</p>
+        </div>
+    </div>
+
+  <!-- VISÃO -->
+    <button class="btn btn-success me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#visaoOffcanvas" aria-controls="visaoOffcanvas">Visão</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="visaoOffcanvas" aria-labelledby="visaoOffcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title " id="missaoOffcanvasLabel">Sonhando Alto: Expandindo Sabores e Qualidade</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>A visão de Zé é continuar a crescer e a servir a comunidade. Ele sonha em expandir a Quitanda do Zé para outras regiões, compartilhando os sabores únicos de seu local de origem. Ele acredita que a paixão pela qualidade e o compromisso com o cliente são os pilares para um futuro brilhante.</p>
+        </div>
+    </div>
+
+  <!-- VALORES -->
+    <button class="btn btn-success me-3 " type="button" data-bs-toggle="offcanvas" data-bs-target="#valoresOffcanvas" aria-controls="valoresOffcanvas">Valores</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="valoresOffcanvas" aria-labelledby="valoresOffcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="missaoOffcanvasLabel">Valores Fundamentais: Qualidade, Honestidade e Comunidade</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>A Quitanda do Zé se baseia em valores sólidos:
+                Qualidade: Eles se esforçam para fornecer produtos da mais alta qualidade, cultivados localmente sempre que possível.
+                Honestidade: A transparência e a integridade estão no centro de tudo o que fazem.
+                Comunidade: Eles são parte da comunidade e se dedicam a apoiá-la.
+                Atendimento ao Cliente: Cada cliente é um amigo, e eles tratam todos com carinho e respeito.
+                Sustentabilidade: Comprometem-se a adotar práticas sustentáveis em suas operações.
+                Hoje, a Quitanda do Zé é uma parte essencial da vida da comunidade local. Zé e sua equipe continuam a trabalhar com paixão e dedicação, trazendo a essência do campo para a cidade.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

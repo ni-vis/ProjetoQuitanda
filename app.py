@@ -6,6 +6,7 @@ from flask import Flask, render_template, request, redirect, session
 # chama sessao (session)
 import sqlite3 as sql
 import uuid
+import os 
 # serve para gerar nomes/numeros aleatorios unicos para as imagens, gera numeros aleatorios para concatenar com os nomes das imagens que serao utilizadas (uuid)
 app = Flask(__name__)
 app.secret_key = "quitandazezinho"
@@ -91,7 +92,7 @@ def cadprodutos():
         title = 'Cadastro de produtos'
         return render_template("cadastro.html", title=title)
     else:
-        return redirect('/login') 
+        return redirect('/login')
 # ROTA DA PAGINA DE CADASTRO NO BANCO ↧
 @app.route('/cadastro', methods=['post'])
 def cadastro():
@@ -110,18 +111,56 @@ def cadastro():
         return redirect('/adm')
     else:
         return redirect('/login')
-# ROTA DE EXCLUSÃO ↧
+@app.route("/sobre")
+def login_page():
+    return render_template("sobre.html")
+# ROTA PARA TRATAR A EDIÇÃO
+@app.route("/editarprodutos", methods=['POST'])
+def editar_prod():
+    id_prod = request.form['id_prod']
+    nome_prod = request.form['nome_prod']
+    desc_prod = request.form['desc_prod']
+    preco_prod = request.form['preco_prod']
+    img_prod = request.files['img_prod']
+
+    id_foto = str(uuid.uuid4().hex)
+    filename = id_foto + nome_prod + '.png'
+
+    conexao = conecta_database()
+
+    if img_prod:
+        produto = conexao.execute('SELECT * FROM produtos WHERE id_prod = ?', (id_prod,)).fetchall()
+        filename_old = produto[0]['img_prod']
+        excluir_arquivo = "static/img/produtos" + filename_old
+        os.remove(excluir_arquivo)
+        img_prod.save("static/img/produtos/" + filename)
+        conexao.execute('UPDATE produtos SET nome_prod = ?, desc_prod = ?, preco_prod = ?, img_prod = ? WHERE id_prod = ?', (nome_prod, desc_prod, preco_prod, filename, id_prod))
+    else:
+        conexao.execute('UPDATE produtos SET nome_prod = ?, desc_prod = ?, preco_prod = ? WHERE id_prod = ?', (nome_prod, desc_prod, preco_prod, id_prod))
+
+    conexao.commit()
+    conexao.close()
+
+    return redirect('/adm')
+
+# ROTA DE EXCLUSÃO
 @app.route('/excluir/<id>')
 def excluir(id):
     if verifica_sessao():
         id = int(id)
         conexao = conecta_database()
+        produto = conexao.execute('SELECT * FROM produtos WHERE id_prod = ?', (id,)).fetchall()
+        filename_old = produto[0]['img_prod']
+        excluir_arquivo = "static/img/produtos" + filename_old
+        os.remove(excluir_arquivo)
         conexao.execute('DELETE FROM produtos WHERE id_prod = ?', (id,))
         conexao.commit()
         conexao.close()
         return redirect('/adm')
-    else: 
+    else:
         return redirect('/login')
+ 
+
 # ROTA DE EDIÇÃO ↧   
 @app.route('/editprodutos/<id_prod>')
 def editar(id_prod):
