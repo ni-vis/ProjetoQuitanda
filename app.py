@@ -144,21 +144,27 @@ def editar_prod():
     return redirect('/adm')
 
 # ROTA DE EXCLUSÃO
-@app.route('/excluir/<id>')
-def excluir(id):
-    if verifica_sessao():
-        id = int(id)
-        conexao = conecta_database()
-        produto = conexao.execute('SELECT * FROM produtos WHERE id_prod = ?', (id,)).fetchall()
+@app.route("/excluir/<id_prod>")
+def excluir(id_prod):
+    id_prod = int(id_prod)
+    conexao = conecta_database()
+    produto = conexao.execute('SELECT * FROM produtos WHERE id_prod = ?', (id_prod,)).fetchall()
+
+    if produto:
         filename_old = produto[0]['img_prod']
-        excluir_arquivo = "static/img/produtos" + filename_old
-        os.remove(excluir_arquivo)
-        conexao.execute('DELETE FROM produtos WHERE id_prod = ?', (id,))
+        excluir_arquivo = "static/img/produtos/" + filename_old
+
+        # Verificar se o arquivo existe antes de tentar excluir
+        if os.path.exists(excluir_arquivo):
+            os.remove(excluir_arquivo)
+
+        conexao.execute('DELETE FROM produtos WHERE id_prod = ?', (id_prod,))
         conexao.commit()
         conexao.close()
-        return redirect('/adm')
-    else:
-        return redirect('/login')
+    
+    return redirect('/adm')
+
+
  
 
 # ROTA DE EDIÇÃO ↧   
